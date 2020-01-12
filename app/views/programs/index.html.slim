@@ -2,7 +2,11 @@ p#notice
   = notice
 h1
   | Programs
-table
+
+.btn-group[role=:group]
+  = link_to 'New Program', new_program_path, class: 'btn btn-primary'
+
+table.table.table-striped
   thead
     tr
       th
@@ -22,6 +26,4 @@ table
         / td
         /   = link_to 'Edit', edit_program_path(program)
         td
-          = link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' }
-br
-= link_to 'New Program', new_program_path
+          = link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
