@@ -17,7 +17,9 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 gem 'bootstrap' # Bootstrap 4 ruby gem for Ruby on Rails (Sprockets)
+gem 'bootstrap-daterangepicker-rails' # This date range picker component creates a dropdown menu from which a user can select a range of dates
 gem 'jquery-rails' # A gem to automate using jQuery with Rails
+gem 'momentjs-rails' # Dependency for bootstrap-daterangepicker'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

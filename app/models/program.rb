@@ -11,7 +11,7 @@ class Program < ApplicationRecord
   end
 
   def has_activity_intersection?
-    Program.where('activity_period && daterange(?, ?)', activity_period.first, activity_period.end).any?
+    Program.where('activity_period && daterange(?, ?)', activity_period.first, activity_period.last + 1.day).any?
   end
 end
 
