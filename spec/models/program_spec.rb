@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Program, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:program) { build(:program) }
+
+  it 'creates program' do
+    program.save!
+  end
 end

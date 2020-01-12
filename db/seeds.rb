@@ -8,12 +8,7 @@
 
 
 if Rails.env.development?
-  Program.create!(
-    :title => "Title 1",
-    :activity_period => Date.new(2019, 1, 1)..Date.new(2019, 1, 2)
-  )
-  Program.create!(
-    :title => "Title 2",
-    :activity_period => Date.new(2019, 1, 3)..Date.new(2019, 1, 4)
-  )
+  include FactoryBot::Syntax::Methods
+
+  create_list(:program, 10)
 end

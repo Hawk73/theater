@@ -38,8 +38,8 @@ gem 'slim' # Slim is a template language whose goal is to reduce the syntax to t
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'factory_bot_rails' # A library for setting up Ruby objects as test data. https://thoughtbot.com
   gem 'rspec-rails', '~> 3.8'
 end
 
