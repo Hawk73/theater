@@ -1,4 +1,5 @@
 class ProgramsController < ApplicationController
+  before_action :prepare_activity_period, only: [:create]
   before_action :set_program, only: [:destroy]
 
   # GET /programs
@@ -24,7 +25,7 @@ class ProgramsController < ApplicationController
     @program = Program.new(program_params)
 
     if @program.save
-      redirect_to @program, notice: 'Program was successfully created.'
+      redirect_to programs_path, notice: 'Program was successfully created.'
     else
       render :new
     end
@@ -55,5 +56,9 @@ class ProgramsController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def program_params
     params.require(:program).permit(:title, :activity_period)
+  end
+
+  def prepare_activity_period
+    params[:program][:activity_period] = "[#{params[:program][:activity_period]}]" if params[:program][:activity_period]
   end
 end

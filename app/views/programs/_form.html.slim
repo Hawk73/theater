@@ -13,6 +13,6 @@
     = form.text_field :title, class: 'form-control'
   .form-group
     = form.label :activity_period
-    = form.text_field :activity_period, class: 'form-control'
+    = form.text_field :activity_period, class: 'form-control', data: { behaviour: 'daterangepicker' }
   .actions
     = form.submit(class: 'btn btn-primary')
