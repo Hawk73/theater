@@ -1,5 +1,5 @@
 class ProgramsController < ApplicationController
-  before_action :prepare_activity_period, only: [:create]
+  before_action :prepare_activity_period_for_db_format, only: [:create]
   before_action :set_program, only: [:destroy]
 
   # GET /programs
@@ -58,7 +58,7 @@ class ProgramsController < ApplicationController
     params.require(:program).permit(:title, :activity_period)
   end
 
-  def prepare_activity_period
+  def prepare_activity_period_for_db_format
     params[:program][:activity_period] = "[#{params[:program][:activity_period]}]" if params[:program][:activity_period]
   end
 end
