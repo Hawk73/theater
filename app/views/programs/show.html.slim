@@ -1,0 +1,13 @@
+p#notice
+  = notice
+p
+  strong
+    | Title:
+  = @program.title
+p
+  strong
+    | Activity period:
+  = @program.activity_period
+= link_to 'Edit', edit_program_path(@program)
+|  | 
+= link_to 'Back', programs_path
