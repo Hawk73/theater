@@ -6,5 +6,7 @@ class CreatePrograms < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    execute "ALTER TABLE programs ADD CONSTRAINT programs_activity_period_excl EXCLUDE USING GIST (activity_period WITH &&)"
   end
 end

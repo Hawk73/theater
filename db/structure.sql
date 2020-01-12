@@ -82,6 +82,14 @@ ALTER TABLE ONLY public.ar_internal_metadata
 
 
 --
+-- Name: programs programs_activity_period_excl; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.programs
+    ADD CONSTRAINT programs_activity_period_excl EXCLUDE USING gist (activity_period WITH &&);
+
+
+--
 -- Name: programs programs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
